@@ -71,7 +71,7 @@
           <input type="password" name="password" id="password" class="form-control" placeholder="Enter password" required />
         </div>
       </div>
-      <button type="submit" class="btn theme-btn w-100">Sign up</button>
+      <button type="submit" class="btn theme-btn w-100">Sign In</button>
       <h4 class="signup">Don't have an account ?<a href="{{route('sign-up')}}"> Sign up</a></h4>
     </div>
   </form>
