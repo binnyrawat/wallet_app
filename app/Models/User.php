@@ -44,4 +44,8 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function group_member(){
+        return $this->hasOne(GroupMember::class,'user_id','id');
+    }
 }

@@ -79,22 +79,14 @@
   <script src="{{asset('assets/js/jquery.js')}}"></script>
   <script src="{{asset('assets/js/bootstrap.bundle.min.js')}}"></script>
   <script src="{{asset('assets/js/jquery.validate.min.js')}}"></script>
-  @stack('scripts')
+  
   <script> 
     $("#register_frm").validate({
         rules: {
-           email:{email:true},
-           confirm_password:{equalTo:'#password'},
-           phone_number:{minlength:10,maxlength:10},
+           
         },
         messages: {
-            confirm_password:{
-                equalTo:"password and confirm password do not matched"
-            },
-            phone_number:{
-                minlength:"Enter valid 10 digit mobile number",
-                maxlength:"Enter valid 10 digit mobile number",
-            }
+            
         },
         errorElement: 'div',
         errorPlacement: function(error, element) {

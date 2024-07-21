@@ -505,7 +505,7 @@ li {
 ==========================*/
 .btn {
   margin-top: 30px;
-  padding: calc(10px + 4 * (100vw - 320px) / 1600);
+  padding: 5px;
 }
 .btn-inline {
   padding-inline: calc(5px + 10 * (100vw - 320px) / 1600);
@@ -523,7 +523,7 @@ li {
   background: linear-gradient(142.56deg, #913aff -1.68%, #622cfd 62.12%);
   color: rgb(255, 255, 255);
   font-weight: 600;
-  font-size: calc(16px + 2 * (100vw - 320px) / 1600);
+  font-size: 1rem;
       padding-left: 15px;
     padding-right: 15px;
   border-radius: 25px;

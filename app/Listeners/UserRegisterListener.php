@@ -24,7 +24,12 @@ class UserRegisterListener
      */
     public function handle(UserRegisterEvent $event): void
     {
-        Mail::to($event->data->email)->send(new UserRegisterEmail($event->data));
-        Mail::to(webSetting()['admin_email'])->send(new UserRegisterAdminEmail($event->data));
+        try{
+            Mail::to($event->data->email)->send(new UserRegisterEmail($event->data));
+            Mail::to(webSetting()['admin_email'])->send(new UserRegisterAdminEmail($event->data));
+        }catch(\Exception $e){
+            
+        }
+        
     }
 }

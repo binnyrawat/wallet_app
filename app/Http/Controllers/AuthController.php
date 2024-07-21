@@ -55,7 +55,7 @@ class AuthController extends Controller
             'email'=>'required',
             'password'=>'required',
          ]);
-         if(Auth::attempt(['email'=>$request->email,'password'=>$request->password])){
+         if(Auth::attempt(['email'=>$request->email,'password'=>$request->password],1)){
             if(Auth::user()->u_status!=1){
                 Auth::logout();
                 return redirect('/login')->withWarning('Account pending for approval or is de-activated..please contact administrator for more info.');
@@ -63,5 +63,10 @@ class AuthController extends Controller
             return redirect('/user/dashboard')->withSuccess('Login Successfull');
          }
          return redirect('/login')->withWarning('Invalid login credentials');
+    }
+
+    public function logout(){
+        Auth::logout();
+        return redirect('login');
     }
 }

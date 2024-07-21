@@ -28,7 +28,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&amp;display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" id="rtl-link" type="text/css" href="{{asset('assets/css/vendors/bootstrap.min.css')}}" />
-
+  @stack('styles')
+  <style>
+    .error{
+      color:red;
+    }
+  </style>
   <link rel="stylesheet" id="change-link" type="text/css" href="{{asset('assets/css/style.css')}}" />
 </head>
 
@@ -39,44 +44,31 @@
       <div class="sidebar-logo">
         <img class="img-fluid logo" src="{{asset('assets/images/logo/logo.png')}}" alt="logo" />
       </div>
-      <div class="balance">
+      {{-- <div class="balance">
         <img class="img-fluid balance-bg" src="{{asset('assets/images/background/auth-bg.jpg')}}" alt="auth-bg" />
         <h5>Balance</h5>
         <h2>$1,06,786.65</h2>
-      </div>
+      </div> --}}
     </div>
     <div class="offcanvas-body">
       <div class="sidebar-content">
         <ul class="link-section">
           <li>
-            <a href="landing.html" class="pages">
+            <a href="{{url('user/dashboard')}}" class="pages">
               <i class="sidebar-icon" data-feather="credit-card"></i>
               <h3>Dashboard</h3>
             </a>
           </li>
           <li>
-            <a href="Group-vault.html" class="pages">
+            <a href="{{route('user.my-groups')}}" class="pages">
               <i class="sidebar-icon" data-feather="users"></i>
               <h3>Group</h3>
             </a>
           </li>
-          <li>
-            <a href="search.html" class="pages">
-              <i class="sidebar-icon" data-feather="user-plus"></i>
-              <h3>Add Members</h3>
-            </a>
-          </li>
-          <li>
-            <a href="transfer.html" class="pages">
-             <div class="service-box mx-0 w-auto h-auto">
-            <i class="iconsax service-icon" data-icon="wallet-open-tick"></i>
-          </div>
-              <h3>Wallet</h3>
-            </a>
-          </li>
+          
           
          
-          <li>
+          {{-- <li>
             <a href="crypto.html" class="pages">
               <i class="sidebar-icon" data-feather="dollar-sign"></i>
               <h3>Payout</h3>
@@ -112,16 +104,16 @@
               <i class="sidebar-icon" data-feather="user"></i>
               <h3>Profile</h3>
             </a>
-          </li>
+          </li> --}}
 
           <li>
-            <a href="signin.html" class="pages">
+            <a href="{{route('logout')}}" class="pages">
               <i class="sidebar-icon" data-feather="log-out"></i>
               <h3>Log out</h3>
             </a>
           </li>
         </ul>
-        <div class="mode-switch">
+        {{-- <div class="mode-switch">
           <ul class="switch-section">
            
             <li>
@@ -131,7 +123,7 @@
               </div>
             </li>
           </ul>
-        </div>
+        </div> --}}
       </div>
     </div>
   </div>
@@ -216,7 +208,9 @@
    <script src="{{asset('assets/js/feather.min.js')}}"></script>
    <script src="{{asset('assets/js/custom-feather.js')}}"></script>
   <script src="{{asset('assets/js/bootstrap.bundle.min.js')}}"></script>
+  <script src="{{asset('assets/js/jquery.js')}}"></script>
   <script src="{{asset('assets/js/script.js')}}"></script>
+  @stack('scripts')
 </body>
 
 </html>
